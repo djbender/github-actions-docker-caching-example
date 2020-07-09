@@ -76,9 +76,9 @@ jobs:
             --cache-from "type=local,src=/tmp/.buildx-cache" \
             --cache-to "type=local,dest=/tmp/.buildx-cache" \
             --output "type=image,push=false" \
-            --tag {{ github.repository }} \
+            --tag ${{ github.repository }} \
             --file ./Dockerfile \
-            {{ github.workspace }}
+            ${{ github.workspace }}
       -
         name: Tree buildx-cache 3
         run: |
