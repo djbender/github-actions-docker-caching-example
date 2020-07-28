@@ -1,11 +1,16 @@
 name: Docker Image CI
 
-on: [push, pull_request]
+on: 
+  push: {}
+  schedule:
+    - cron: '* * * * *'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - 
+        runs: printenv | sort
       -
         uses: actions/checkout@v2
       -
